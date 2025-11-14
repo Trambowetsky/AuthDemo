@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "KmMbBYsR0Xw=",
+  "dgSpecHash": "ow/Oy33ROTY=",
   "success": true,
   "projectFilePath": "/Users/alextramb/RiderProjects/AuthDemo/AuthDemo/AuthDemo.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "/Users/alextramb/.nuget/packages/microsoft.aspnetcore.cryptography.internal/9.0.10/microsoft.aspnetcore.cryptography.internal.9.0.10.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/9.0.10/microsoft.aspnetcore.cryptography.keyderivation.9.0.10.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/9.0.10/microsoft.aspnetcore.identity.entityframeworkcore.9.0.10.nupkg.sha512",
+    "/Users/alextramb/.nuget/packages/microsoft.aspnetcore.identity.ui/9.0.9/microsoft.aspnetcore.identity.ui.9.0.9.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.bcl.asyncinterfaces/7.0.0/microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.build.framework/17.8.3/microsoft.build.framework.17.8.3.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.build.locator/1.7.8/microsoft.build.locator.1.7.8.nupkg.sha512",
@@ -32,6 +33,8 @@
     "/Users/alextramb/.nuget/packages/microsoft.extensions.dependencyinjection/9.0.10/microsoft.extensions.dependencyinjection.9.0.10.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/9.0.10/microsoft.extensions.dependencyinjection.abstractions.9.0.10.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.extensions.dependencymodel/9.0.9/microsoft.extensions.dependencymodel.9.0.9.nupkg.sha512",
+    "/Users/alextramb/.nuget/packages/microsoft.extensions.fileproviders.abstractions/9.0.9/microsoft.extensions.fileproviders.abstractions.9.0.9.nupkg.sha512",
+    "/Users/alextramb/.nuget/packages/microsoft.extensions.fileproviders.embedded/9.0.9/microsoft.extensions.fileproviders.embedded.9.0.9.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.extensions.identity.core/9.0.10/microsoft.extensions.identity.core.9.0.10.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.extensions.identity.stores/9.0.10/microsoft.extensions.identity.stores.9.0.10.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/microsoft.extensions.logging/9.0.10/microsoft.extensions.logging.9.0.10.nupkg.sha512",
