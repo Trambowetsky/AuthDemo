@@ -15,12 +15,13 @@ builder.Services.AddDbContext<AppDbContext>(options =>
   //  .AddEntityFrameworkStores<AppDbContext>()
    // .AddDefaultTokenProviders();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options =>
-    {
-        options.SignIn.RequireConfirmedAccount = false;
-    })
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<AppDbContext>();
+   builder.Services.AddDefaultIdentity<IdentityUser>(options =>
+       {
+           options.SignIn.RequireConfirmedAccount = false;
+       })
+       .AddRoles<IdentityRole>()
+       .AddEntityFrameworkStores<AppDbContext>()
+       .AddDefaultUI();
 
 builder.Services.ConfigureApplicationCookie(options =>
 {
