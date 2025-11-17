@@ -5,15 +5,10 @@ using AuthDemo.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-//builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
-  //  .AddEntityFrameworkStores<AppDbContext>()
-   // .AddDefaultTokenProviders();
 
    builder.Services.AddDefaultIdentity<IdentityUser>(options =>
        {
@@ -44,12 +39,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.UseAuthorization();
 
-app.MapStaticAssets();
+    //app.MapStaticAssets();
 
-app.MapControllerRoute(
+    app.MapControllerRoute(
         name: "default",
-        pattern: "{controller=Home}/{action=Index}/{id?}")
-    .WithStaticAssets();
+        pattern: "{controller=Home}/{action=Index}/{id?}");
+   // .WithStaticAssets();
 app.MapRazorPages();
 using (var scope = app.Services.CreateScope())
 {
