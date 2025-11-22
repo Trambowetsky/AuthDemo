@@ -35,16 +35,15 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseRouting();
+app.UseStaticFiles();
 app.UseAuthentication();
 app.UseAuthorization();
 app.UseAuthorization();
 
-    //app.MapStaticAssets();
-
     app.MapControllerRoute(
         name: "default",
         pattern: "{controller=Home}/{action=Index}/{id?}");
-   // .WithStaticAssets();
+    
 app.MapRazorPages();
 using (var scope = app.Services.CreateScope())
 {
