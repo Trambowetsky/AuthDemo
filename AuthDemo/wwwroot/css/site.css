@@ -30,3 +30,14 @@ body {
   text-align: start;
 }
 
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+body {
+  background: linear-gradient(135deg, #1d3557, #457b9d);
+  color: #fff;
+}
