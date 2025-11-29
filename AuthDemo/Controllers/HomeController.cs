@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using AuthDemo.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace AuthDemo.Controllers;
 
@@ -17,7 +18,7 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    [Authorize(Roles = "Admin")]
     public IActionResult Privacy()
     {
         return View();
