@@ -1,21 +1,37 @@
+using AuthDemo.Data;
+using AuthDemo.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
+[Authorize(Roles = "Admin")]
 public class AdminController : Controller
 {
-    private readonly UserManager<IdentityUser> _userManager;
+    private readonly UserManager<ApplicationUser> _userManager;
     private readonly RoleManager<IdentityRole> _roleManager;
 
-    public AdminController(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+    public AdminController(UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _roleManager = roleManager;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
+        List<UserViewModel> model = new List<UserViewModel>();
         var users = _userManager.Users.ToList();
-        return View(users);
+        foreach (var user in users)
+        {
+            var roles = await _userManager.GetRolesAsync(user);
+            model.Add(new UserViewModel()
+            {
+                Email = user.Email,
+                Id = user.Id,
+                Roles = roles.ToList()
+            });
+        }
+
+        return View(model);
     }
 
     [HttpPost]
