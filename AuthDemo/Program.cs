@@ -65,6 +65,36 @@ async Task CreateRolesAsync(IHost app)
     }
 }
 
-await CreateRolesAsync(app);
+async Task CheckUserRolesAsync()
+{
+    await using (var scope = app.Services.CreateAsyncScope())
+    {
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+        var userManager = scope.ServiceProvider.GetRequiredService<UserManager<ApplicationUser>>();
+        var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+        var users = userManager.Users.ToList();
 
+        if (users.Count > 0)
+        {
+            var anyAdmin = false;
+            foreach (var user in users)
+            {
+                if (await userManager.IsInRoleAsync(user, "Admin"))
+                {
+                    anyAdmin = true;
+                    break;
+                }
+            }
+
+            if (!anyAdmin)
+            {
+                var firstUser = users.First();
+                await userManager.AddToRoleAsync(firstUser, "Admin");
+            }
+        }
+    }
+}
+
+await CreateRolesAsync(app);
+await CheckUserRolesAsync();
 app.Run();

@@ -122,7 +122,11 @@ namespace AuthDemo.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-
+                    var users = _userManager.Users.ToList();
+                    if (users.Count == 1)
+                    {
+                        await _userManager.AddToRoleAsync(user, "Admin");
+                    }
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
