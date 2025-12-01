@@ -37,3 +37,10 @@ body {
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.25);
 }
+.identity{
+  background: linear-gradient(135deg, #1d3557, #457b9d);
+  color: #fff;
+}
+.text-light {
+  color: #f1f1f1 !important;
+}

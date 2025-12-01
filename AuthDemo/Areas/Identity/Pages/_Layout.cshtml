@@ -1,0 +1,27 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="identity">
+<nav class="navbar navbar-light bg-light border-bottom mb-4">
+    <a class="navbar-brand ms-2" asp-controller="Home" asp-action="Index">AuthDemo</a>
+</nav>
+
+<div class="container">
+    @RenderBody()
+</div>
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
