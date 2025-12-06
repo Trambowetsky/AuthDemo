@@ -1,0 +1,43 @@
+@model AuthDemo.Models.EditRolesViewModel
+@{
+    ViewData["Title"] = "Edit roles for " + Model.Email;
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">Roles for @Model.Email</h2>
+
+    <form asp-action="EditRoles" method="post">
+
+        <input type="hidden" name="UserId" value="@Model.UserId" />
+
+        <div class="card shadow-sm p-4">
+            <h5 class="mb-3">Assign Roles</h5>
+
+            @foreach (var role in Model.AllRoles)
+            {
+                var isChecked = Model.UserRoles.Contains(role);
+
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input"
+                           type="checkbox"
+                           name="SelectedRoles"
+                           value="@role"
+                           id="role_@role"
+                           @(isChecked ? "checked" : "") />
+
+                    <label class="form-check-label fw-semibold" for="role_@role">
+                        @role
+                    </label>
+                </div>
+            }
+        </div>
+
+        <button class="btn btn-primary mt-4 px-4" type="submit">
+            Save changes
+        </button>
+
+        <a asp-action="Index" class="btn btn-outline-secondary mt-4 ms-2">
+            Cancel
+        </a>
+    </form>
+</div>

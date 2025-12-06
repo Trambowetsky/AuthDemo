@@ -45,4 +45,19 @@ public class AdminController : Controller
 
         return RedirectToAction("Index");
     }
+
+    [HttpGet]
+    public async Task<IActionResult> EditRoles(string id)
+    {
+        var  user = await _userManager.FindByIdAsync(id);
+        var model = new EditRolesViewModel
+        {
+            UserId = user.Id,
+            Email = user.Email,
+            AllRoles = _roleManager.Roles.Select(r => r.Name).ToList(),
+            UserRoles = (await _userManager.GetRolesAsync(user)).ToList()
+        };
+
+        return View(model);
+    }
 }
