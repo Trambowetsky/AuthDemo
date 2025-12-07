@@ -68,8 +68,8 @@ public class AdminController : Controller
         var removeRoles = currentUserRoles.Except(selectedRoles);
         var addRoles =selectedRoles.Except(currentUserRoles);
         
-        _userManager.RemoveFromRolesAsync(removeRoles, user);
-        _userManager.AddToRolesAsync(user, addRoles);
+        await _userManager.RemoveFromRolesAsync(user, removeRoles);
+        await _userManager.AddToRolesAsync(user, addRoles);
         return RedirectToAction("Index");
     }
 }
