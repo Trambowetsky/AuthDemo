@@ -49,7 +49,7 @@ public class AdminController : Controller
     [HttpGet]
     public async Task<IActionResult> EditRoles(string id)
     {
-        var  user = await _userManager.FindByIdAsync(id);
+        var user = await _userManager.FindByIdAsync(id);
         var model = new EditRolesViewModel
         {
             UserId = user.Id,
@@ -59,5 +59,17 @@ public class AdminController : Controller
         };
 
         return View(model);
+    }
+    [HttpPost]
+    public async Task<IActionResult> EditRoles(string id, List<string> selectedRoles)
+    {
+        var user = await _userManager.FindByIdAsync(id);
+        var currentUserRoles = (await _userManager.GetRolesAsync(user)).ToList();
+        var removeRoles = currentUserRoles.Except(selectedRoles);
+        var addRoles =selectedRoles.Except(currentUserRoles);
+        
+        _userManager.RemoveFromRolesAsync(removeRoles, user);
+        _userManager.AddToRolesAsync(user, addRoles);
+        return RedirectToAction("Index");
     }
 }
