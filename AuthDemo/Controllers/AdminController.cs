@@ -64,6 +64,10 @@ public class AdminController : Controller
     public async Task<IActionResult> EditRoles(string id, List<string> selectedRoles)
     {
         var user = await _userManager.FindByIdAsync(id);
+        if (user == null)
+        {
+            return NotFound();
+        }
         var currentUserRoles = (await _userManager.GetRolesAsync(user)).ToList();
         var removeRoles = currentUserRoles.Except(selectedRoles);
         var addRoles =selectedRoles.Except(currentUserRoles);
