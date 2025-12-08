@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ag0wI3ZkHe8=",
+  "dgSpecHash": "z1uXRSKMROc=",
   "success": true,
   "projectFilePath": "/Users/alextramb/RiderProjects/AuthDemo/AuthDemo/AuthDemo.csproj",
   "expectedPackageFiles": [
+    "/Users/alextramb/.nuget/packages/aspnet.security.oauth.github/8.3.0/aspnet.security.oauth.github.8.3.0.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/azure.core/1.38.0/azure.core.1.38.0.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/azure.identity/1.11.4/azure.identity.1.11.4.nupkg.sha512",
     "/Users/alextramb/.nuget/packages/humanizer/2.14.1/humanizer.2.14.1.nupkg.sha512",

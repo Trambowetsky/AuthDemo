@@ -291,3 +291,4 @@
 /Users/alextramb/RiderProjects/AuthDemo/AuthDemo/obj/Debug/net8.0/AuthDemo.pdb
 /Users/alextramb/RiderProjects/AuthDemo/AuthDemo/obj/Debug/net8.0/AuthDemo.genruntimeconfig.cache
 /Users/alextramb/RiderProjects/AuthDemo/AuthDemo/obj/Debug/net8.0/ref/AuthDemo.dll
+/Users/alextramb/RiderProjects/AuthDemo/AuthDemo/bin/Debug/net8.0/AspNet.Security.OAuth.GitHub.dll
